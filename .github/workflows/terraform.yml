@@ -32,14 +32,14 @@ jobs:
         run: |
           az login \
             --service-principal \
-            --username "464e889a-93a3-40d7-aca6-189ff477518e" \
-            --password "Pw_8Q~XCqRgqVG24QSPcJ8HE5ptrIi18Cs07abiP" \
-            --tenant "f63c0b81-f86b-4b01-9374-66bb63691322"
+            --username "${{ vars.AMIT1234 }}" \
+            --password "${{ secrets.PASSWORD1234 }}" \
+            --tenant "${{ vars.TENENT1234 }}"
 
       - name: Set Azure Subscription
         run: |
           az account set \
-            --subscription "b0ec999f-b48b-4499-8f02-dcd3bf1dbe7b"
+            --subscription "${{ vars.SUBSCRIPTION_ID }}"
 
       - name: Check Azure Login
         run: az account show
@@ -55,6 +55,7 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan
+
 
   terraform-apply:
     name: Terraform Apply
@@ -80,14 +81,14 @@ jobs:
         run: |
           az login \
             --service-principal \
-            --username "464e889a-93a3-40d7-aca6-189ff477518e" \
-            --password "Pw_8Q~XCqRgqVG24QSPcJ8HE5ptrIi18Cs07abiP" \
-            --tenant "f63c0b81-f86b-4b01-9374-66bb63691322"
+            --username "${{ vars.AMIT1234 }}" \
+            --password "${{ secrets.PASSWORD1234 }}" \
+            --tenant "${{ vars.TENENT1234 }}"
 
       - name: Set Azure Subscription
         run: |
           az account set \
-            --subscription "b0ec999f-b48b-4499-8f02-dcd3bf1dbe7b"
+            --subscription "${{ vars.SUBSCRIPTION_ID }}"
 
       - name: Check Azure Login
         run: az account show
