@@ -1,5 +1,5 @@
 rgs = {
-  rg1 = {
+  rg = {
     name     = "rg-chor-prod"
     location = "centralindia"
   }
